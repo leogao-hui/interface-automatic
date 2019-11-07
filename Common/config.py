@@ -4,15 +4,20 @@
 
 import configparser
 import os
+import json
 
 first = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
 case_path = os.path.join(first, "config.ini")
 config = configparser.ConfigParser()
 config.read(case_path)
 ci_url = config.get("url", "backend_url")[1:-1]
-print(ci_url)
 
 header = {"Content-Type": "application/json", "charset": "UTF-8"}
+
+
+def json_dump(data):
+    json_data = json.dumps(data)
+    return json_data
 
 
 def println(status, value):
