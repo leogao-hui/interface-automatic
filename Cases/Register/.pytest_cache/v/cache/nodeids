@@ -1,0 +1,6 @@
+[
+  "testLoginWithPassword.py::TestLogin::test_account_not_exist_login",
+  "testLoginWithPassword.py::TestLogin::test_normal_login",
+  "testLoginWithPassword.py::TestLogin::test_not_have_password",
+  "testLoginWithPassword.py::TestLogin::test_wrong_password"
+]

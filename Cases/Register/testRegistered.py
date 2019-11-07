@@ -14,7 +14,7 @@ from Common.Data.registerData import not_account_data, send_smsCode_data, regist
 from Common.operateDatabaseData import delete_database_data_test_ci
 
 
-class TestLoginCount(unittest.TestCase):
+class TestRegister(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -67,7 +67,9 @@ class TestLoginCount(unittest.TestCase):
 
     # 正常注册账号
     def test_register_account(cls):
+        # 发送验证码
         cls.SmsControllerFunction.get_smsCode(register_common_data.register_common_data)
+        # 获取验证码
         sms_code = cls.DevOpsControllerFunction.get_sms(json_dump(register_common_data.get_entry_common_data)).json() ['payload']['value']
         register_data = json_dump({
             "channel": "WS",
@@ -86,7 +88,9 @@ class TestLoginCount(unittest.TestCase):
 
     # 注册账号重复
     def test_register_account_repeat(cls):
+        # 发送验证码
         cls.SmsControllerFunction.get_smsCode(register_repeat_data.register_repeat_data)
+        # 获取验证码
         sms_code_first = cls.DevOpsControllerFunction.get_sms(json_dump(register_repeat_data.get_entry_common_data)).json()['payload']['value']
         register_data_first = json_dump({
             "channel": "WS",
