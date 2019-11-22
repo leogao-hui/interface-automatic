@@ -315,4 +315,79 @@ def authorization_of_command(data):
     return response
 
 
+def video_command_group_open_command(data):
+    '''
+    视频指挥组开启指挥
+    :param data: 视频指挥组开启指挥数据
+    :return: response
+    '''
+    request = requests.session()
+    response = request.post(headers=header, url=VideoCommandUrl.video_command_group_open_command_url, data=data)
+    return response
+
+
+def exit_the_command(data):
+    '''
+    退出指挥
+    :param data: 退出指挥数据
+    :return: response
+    '''
+    request = requests.session()
+    response = request.post(headers=header, url=VideoCommandUrl.exit_the_command_url, data=data)
+    return response
+
+
+def editor_command_group(data):
+    '''
+    编辑指挥分组
+    :param data: 编辑指挥分组数据
+    :return: response
+    '''
+    request = requests.session()
+    response = request.post(headers=header, url=VideoCommandUrl.editor_command_group_url, data=data)
+    return response
+
+
+def receive_current_user_command_group(data):
+    '''
+    获取当前用户指挥分组
+    :param data: 获取当前用户指挥分组数据
+    :return: response
+    '''
+    request = requests.session()
+    response = request.post(headers=header, url=VideoCommandUrl.receive_current_user_command_group_url, data=data)
+    return response
+
+
+def great_command(data):
+    '''
+    越级指挥
+    :param data: 越级指挥数据
+    :return: response
+    '''
+    request = requests.session()
+    response = request.post(headers=header, url=VideoCommandUrl.great_command_url, data=data)
+    return response
+
+
+def pause_command(data):
+    '''
+    暂停指挥
+    :param data: 暂停指挥数据
+    :return: response
+    '''
+    request = requests.session()
+    response = request.post(headers=header, url=VideoCommandUrl.pause_command_url, data=data)
+    return response
+
+
+def perform_command(data):
+    '''
+    专向指挥
+    :param data: 专向指挥数据
+    :return: response
+    '''
+    request = requests.session()
+    response = request.post(headers=header, url=VideoCommandUrl.perform_command_url, data=data)
+    return response
 

@@ -40,8 +40,7 @@ def delete_database_data_test_ci():
 
     tables = cur.fetchall()
 
-    name = ['gw_bank_card_bin', 'gw_bank_entity', 'gw_document', 'gw_yntrust_binding_config',
-            'gw_job_lock', 'gw_channel_white_list']
+    name = []
 
     for table in tables:
         if str(table[0]) not in name:
@@ -51,6 +50,9 @@ def delete_database_data_test_ci():
     cur.execute(yes_func_foreign_key)
     db.close()
 
+def add_database_data_test_ci():
+
+    pass
 
 
 
