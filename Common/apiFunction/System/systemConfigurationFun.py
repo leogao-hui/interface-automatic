@@ -7,10 +7,9 @@ from Common.apiUrl.System.systemConfigurationUrl import SystemConfigurationUrl
 from Common.config import header
 
 
-# 获取验证码
 def receive_verification_code(data):
     '''
-
+    获取验证码
     :param data: 获取验证码数据
     :return: response
     '''
@@ -19,10 +18,9 @@ def receive_verification_code(data):
     return response
 
 
-# 登录
 def login(data):
     '''
-
+    登录
     :param data: 登录数据
     :return: response
     '''
@@ -31,10 +29,9 @@ def login(data):
     return response
 
 
-# 退出
 def exit_login(data):
     '''
-
+    退出
     :param data: 退出登录数据
     :return: response
     '''
@@ -43,13 +40,14 @@ def exit_login(data):
     return response
 
 
-# 业务重启
 def business_restart(data):
     '''
-
+    业务重启
     :param data: 业务重启数据
     :return: response
     '''
     request = requests.session()
     response = request.post(headers=header, url=SystemConfigurationUrl.business_restart_url, data=data)
     return response
+
+
