@@ -50,11 +50,25 @@ def delete_database_data_test_ci():
     cur.execute(yes_func_foreign_key)
     db.close()
 
+
 def add_database_data_test_ci():
 
-    pass
+    db = pymysql.connect(
+        host=host,
+        port=port,
+        user=user,
+        passwd=pass_wd,
+        db=db_name)
 
+    cur = db.cursor()
 
+    query_one = 'insert into spzh_organization(id, name, parentid, num, usestatus, ' \
+                'level, tranid) values (1, "总军区", "", 02, 0, 1, "")'
+    query_two = 'insert into spzh_user(id, realname, username, deviceid, password, organizationnum, userrole, num, usestatus, morendevice, lastlogintime, status, lastloginerrortime, loginerrorcount, loginstatus, createtime, translaterealname, ip) values (1, "管理员", "admin", "", "0192023a7bbd73250516f069df18b500", 1, "管理员", 0, 0, "", "", "", "", "", "", "", "", "")'
+
+    cur.execute(query_one)
+    cur.execute(query_two)
+    db.close()
 
 
 
