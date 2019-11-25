@@ -10,7 +10,7 @@ class SystemConfigurationUrl:
     receive_verification_code_url = '%s/sys/getVerify' % ci_url
 
     # 登录
-    login_url = '%s/sys/login' % ci_url
+    login_url = '%s/spzh/sys/login' % ci_url
 
     # 退出
     exit_url = '%s/sys/logout' % ci_url

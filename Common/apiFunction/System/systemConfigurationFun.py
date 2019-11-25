@@ -18,14 +18,14 @@ def receive_verification_code(data):
     return response
 
 
-def login(data):
+def login(header_name, data):
     '''
     登录
     :param data: 登录数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=SystemConfigurationUrl.login_url, data=data)
+    response = request.post(headers=header_name, url=SystemConfigurationUrl.login_url, data=data)
     return response
 
 

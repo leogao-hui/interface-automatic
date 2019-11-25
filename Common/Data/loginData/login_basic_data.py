@@ -1,13 +1,7 @@
 #_author:leo gao
 #encoding:utf-8
 
-import json
-import requests
-url = 'http://10.66.8.200:8088/spzh/sys/login'
-header = {
-"Content-Type": "application/json"
-}
-data = {
+administrator_login_data = {
   "createtime": "",
   "deviceid": "",
   "devicename": "",
@@ -34,5 +28,5 @@ data = {
   "usestatus": ""
 }
 
-response = requests.session().post(url=url, data=json.dumps(data), headers=header)
-print(response.status_code)
+
+

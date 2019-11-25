@@ -62,13 +62,11 @@ def add_database_data_test_ci():
 
     cur = db.cursor()
 
-    query_one = 'insert into spzh_organization(id, name, parentid, num, usestatus, ' \
-                'level, tranid) values (1, "总军区", "", 02, 0, 1, "")'
-    query_two = 'insert into spzh_user(id, realname, username, deviceid, password, organizationnum, userrole, num, usestatus, morendevice, lastlogintime, status, lastloginerrortime, loginerrorcount, loginstatus, createtime, translaterealname, ip) values (1, "管理员", "admin", "", "0192023a7bbd73250516f069df18b500", 1, "管理员", 0, 0, "", "", "", "", "", "", "", "", "")'
+    query_one = 'insert into spzh_organization(id, name, parentid, num, usestatus, level, tranid) values (1, "总军区", "", 02, 0, 1, NULL)'
+    query_two = 'insert into spzh_user(id, realname, username, deviceid, password, organizationnum, userrole, num, usestatus, morendevice, lastlogintime, status, lastloginerrortime, loginerrorcount, loginstatus, createtime, translaterealname, ip) values (1, "管理员", "admin", NULL, "0192023a7bbd73250516f069df18b500", 1, "管理员", 0, 0, NULL, NULL, 1, NULL, 0, 0, NULL, NULL, "")'
 
     cur.execute(query_one)
     cur.execute(query_two)
+    db.commit()
     db.close()
-
-
 

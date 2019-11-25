@@ -6,14 +6,14 @@ from Common.apiUrl.backgroundManagement.userManagementUrl import UserManagementU
 from Common.config import header
 
 
-def add_user_information(data):
+def add_user_information(header_data, data):
     '''
     用户信息-新增
     :param data: 用户新增数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=UserManagementUrl.user_add_url, data=data)
+    response = request.post(headers=header_data, url=UserManagementUrl.user_add_url, data=data)
     return response
 
 
