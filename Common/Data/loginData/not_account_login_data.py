@@ -9,7 +9,7 @@ add_user_data = {
     "userrole": "参谋",
 }
 
-user_normal_login_data = {
-    "username": add_user_data.get('username'),
+user_not_account_login_data = {
+    "username": '',
     "password": add_user_data.get('password')
 }

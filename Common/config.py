@@ -15,6 +15,7 @@ ci_url = config.get("url", "backend_url")[1:-1]
 header = {}
 # stYPz8KmQtOjWz0nSXXjiOTdATOLtnNGf1pEumZlsd+dmxpCarFr8S+P6KF7+/Nd
 
+
 def get_header(authorization):
     header = {"Content-Type": "application/json", "charset": "UTF-8", "Authorization": authorization}
     return header
