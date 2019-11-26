@@ -9,7 +9,7 @@ import unittest
 sys.dont_write_bytecode = True
 
 first = os.path.dirname((os.path.abspath(__file__)))
-case_path = os.path.join(first, "Cases/Register/")
+case_path = os.path.join(first, "Cases/Login")
 sys.path.append(case_path)
 
 discover = unittest.defaultTestLoader.discover(start_dir=case_path,
