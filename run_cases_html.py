@@ -12,9 +12,8 @@ case_path = os.path.join(first, "Cases/Login")
 report_path = os.path.join(first, "Common/Report")
 
 
-def add_case(casepath = case_path, rule="test*.py"):
+def add_case(casepath=case_path, rule="test*.py"):
 
-    '''加载所有的测试用例'''
     # 定义discover方法的参数
     discover = unittest.defaultTestLoader.discover(casepath, pattern=rule,)
 
@@ -23,7 +22,7 @@ def add_case(casepath = case_path, rule="test*.py"):
 
 def run_case(all_case, reportpath=report_path):
 
-    '''执行所有的用例, 并把结果写入测试报告'''
+    #  执行所有的用例, 并把结果写入测试报告
     htmlreport = reportpath+r"/result.html"
     print("测试报告生成地址：%s" % htmlreport)
     fp = open(htmlreport, "wb")
