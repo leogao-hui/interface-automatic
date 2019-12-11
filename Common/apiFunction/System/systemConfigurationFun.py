@@ -29,14 +29,14 @@ def login(header_name, data):
     return response
 
 
-def exit_login(data):
+def exit_login(header_name, data):
     '''
     退出
     :param data: 退出登录数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=SystemConfigurationUrl.exit_url, data=data)
+    response = request.post(headers=header_name, url=SystemConfigurationUrl.exit_url, data=data)
     return response
 
 

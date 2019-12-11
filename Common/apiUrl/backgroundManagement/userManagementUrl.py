@@ -7,7 +7,7 @@ from Common.config import ci_url
 class UserManagementUrl:
 
     # 用户信息-新增
-    user_add_url = '%s/spzh/user/add' % ci_url
+    user_add_url = '%s/user/add' % ci_url
 
     # 用户绑定设备
     user_bind_device_url = '%s/user/bddevice' % ci_url

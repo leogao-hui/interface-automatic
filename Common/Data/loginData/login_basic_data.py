@@ -55,3 +55,17 @@ add_user_data_four = {
     "username": "admintest2",
     "userrole": "参谋",
 }
+
+add_user_data_five = {
+    "organizationnum": "1",
+    "password": "admin123",
+    "username": "admintest3",
+    "userrole": "参谋",
+}
+
+add_user_data_six = {
+    "organizationnum": "1",
+    "password": "admin123",
+    "username": "admintest4",
+    "userrole": "参谋",
+}

@@ -10,7 +10,7 @@ from Common.Data.loginData import login_basic_data, normal_login_data, not_accou
 from Common.config import json_dump, get_header
 from Common.Log.log import log
 from Common.operateDatabaseData import add_database_data_test_ci, delete_database_data_test_ci
-from Common.apiFunction.System.systemConfigurationFun import login
+from Common.apiFunction.System.systemConfigurationFun import login, exit_login
 from Common.apiFunction.backgroundManagement.userManagementFun import add_user_information
 
 
@@ -30,8 +30,10 @@ class TestLogin(unittest.TestCase):
                              json_dump(login_basic_data.add_user_data_two))
         add_user_information(get_header(response.json()['d']['authorization']),
                              json_dump(login_basic_data.add_user_data_three))
+
         add_user_information(get_header(response.json()['d']['authorization']),
                              json_dump(login_basic_data.add_user_data_four))
+        exit_login(get_header(response.json()['d']['authorization']), json_dump(''))
 
     # 登录账号时，正常输入账号，密码，验证码，正常登录
     def test_normal_login(self):
@@ -41,6 +43,7 @@ class TestLogin(unittest.TestCase):
         self.assertEqual('登录成功', response.json()['m'])
         self.assertEqual(normal_login_data.add_user_data.get('username'), response.json()['d']['user']['username'])
         self.assertEqual(normal_login_data.add_user_data.get('userrole'), response.json()['d']['user']['userrole'])
+        exit_login(get_header(response.json()['d']['authorization']), json_dump(''))
         case_name = '登录账号时，正常输入账号，密码，验证码，正常登录'
         if response.status_code == 200:
             log().info('%s 的接口is pass' % case_name)
@@ -122,6 +125,7 @@ class TestLogin(unittest.TestCase):
         self.assertEqual('登录成功', response.json()['m'])
         self.assertEqual('admin', response.json()['d']['user']['username'])
         self.assertEqual('管理员', response.json()['d']['user']['userrole'])
+        exit_login(get_header(response.json()['d']['authorization']), json_dump(''))
         case_name = '登录账号时，正常输入账号，密码，验证码，正常登录'
         if response.status_code == 200:
             log().info('%s 的接口is pass' % case_name)
