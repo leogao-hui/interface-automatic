@@ -5,19 +5,21 @@
 import configparser
 import os
 import json
-
+import random
 first = os.path.dirname(os.path.dirname((os.path.abspath(__file__))))
 case_path = os.path.join(first, "config.ini")
 config = configparser.ConfigParser()
 config.read(case_path)
 ci_url = config.get("url", "backend_url")[1:-1]
+socket_url = config.get("socket", "socket_url")[1:-1]
 
 header = {}
 # stYPz8KmQtOjWz0nSXXjiOTdATOLtnNGf1pEumZlsd+dmxpCarFr8S+P6KF7+/Nd
 
 
 def get_header(authorization):
-    header = {"Content-Type": "application/json", "charset": "UTF-8", "Authorization": authorization}
+    header = {"Content-Type": "application/json", "charset": "UTF-8", "Authorization": authorization, "X-Forwarded-For": str(random.randint(1,255))+'.'+str(random.randint(1,255))+'.'+str(random.randint(1,255))+'.'+str(random.randint(1,255))
+              }
     return header
 
 

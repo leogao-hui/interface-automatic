@@ -40,7 +40,7 @@ def delete_database_data_test_ci():
 
     tables = cur.fetchall()
 
-    name = []
+    name = ['spzh_outserver']
 
     for table in tables:
         if str(table[0]) not in name:
@@ -71,5 +71,18 @@ def add_database_data_test_ci():
     db.close()
 
 
+def get_data(sql_sentence):
 
+    db = pymysql.connect(
+        host=host,
+        port=port,
+        user=user,
+        passwd=pass_wd,
+        db=db_name)
 
+    cur = db.cursor()
+    cur.execute(sql_sentence)
+    result = cur.fetchall()
+    cur.close()
+    db.close()
+    return result

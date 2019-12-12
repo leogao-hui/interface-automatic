@@ -17,3 +17,4 @@ class SystemConfigurationUrl:
 
     # 业务重启
     business_restart_url = '%s/sys/restartSys' % ci_url
+

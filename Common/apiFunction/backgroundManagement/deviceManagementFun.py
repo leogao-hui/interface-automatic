@@ -6,14 +6,14 @@ from Common.apiUrl.backgroundManagement.deviceManagementUrl import DeviceManagem
 from Common.config import header
 
 
-def add_device_information(data):
+def add_device_information(header_name, data):
     '''
     设备信息-新增
     :param data: 设备信息-新增数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=DeviceManagementUrl.add_device_url, data=data)
+    response = request.post(headers=header_name, url=DeviceManagementUrl.add_device_url, data=data)
     return response
 
 

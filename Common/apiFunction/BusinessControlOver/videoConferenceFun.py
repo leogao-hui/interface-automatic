@@ -7,14 +7,14 @@ from Common.apiUrl.BusinessControlOver.videoConferenceUrl import VideoConference
 from Common.config import header
 
 
-def add_video_conference_group(data):
+def add_video_conference_group(header_name, data):
     '''
     视频会议组-新增
     :param data: 视频会议组-新增数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=VideoConferenceUrl.video_conference_group_add_url, data=data)
+    response = request.post(headers=header_name, url=VideoConferenceUrl.video_conference_group_add_url, data=data)
     return response
 
 
@@ -243,14 +243,14 @@ def receive_video_member_group_details(data):
     return response
 
 
-def video_meeting_open_meeting(data):
+def video_meeting_open_meeting(header_name, data):
     '''
     视频会议-开启会议
     :param data: 视频会议-开启会议数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=VideoConferenceUrl.video_meeting_open_meeting_url, data=data)
+    response = request.post(headers=header_name, url=VideoConferenceUrl.video_meeting_open_meeting_url, data=data)
     return response
 
 
@@ -320,13 +320,13 @@ def video_meeting_group_update(data):
     return response
 
 
-def receive_video_meeting_group_list(data):
+def receive_video_meeting_group_list(header_name, data):
     '''
     获取视频会议组
     :param data: 获取视频会议组数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=VideoConferenceUrl.receive_video_meeting_group_list_url, data=data)
+    response = request.get(headers=header_name, url=VideoConferenceUrl.receive_video_meeting_group_list_url, data=data)
     return response
 

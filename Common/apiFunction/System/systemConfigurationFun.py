@@ -5,6 +5,8 @@
 import requests
 from Common.apiUrl.System.systemConfigurationUrl import SystemConfigurationUrl
 from Common.config import header
+from websocket import create_connection
+from Common.config import socket_url
 
 
 def receive_verification_code(data):
@@ -49,5 +51,14 @@ def business_restart(data):
     request = requests.session()
     response = request.post(headers=header, url=SystemConfigurationUrl.business_restart_url, data=data)
     return response
+
+
+def connect_socket(user_id):
+    con_socket = create_connection('%s/im/%sms' % (socket_url, user_id))
+    while True:
+        rev_data = []
+        data = con_socket.recv()
+        rev_data.append(data)
+
 
 
