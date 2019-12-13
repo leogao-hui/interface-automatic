@@ -75,3 +75,11 @@ login_user_data_four = {
     "username": add_user_data_four.get('username'),
     "password": add_user_data_four.get('password')
 }
+
+device_data = {
+                "company": "测试公司",
+                "ip": "192.168.1.1",
+                "name": "设备一",
+                "organizationnum": "1",
+                "type": "编码器",
+                }

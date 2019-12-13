@@ -71,7 +71,7 @@ def add_database_data_test_ci():
     db.close()
 
 
-def get_data(sql_sentence):
+def get_data_from_database(sql_sentence):
 
     db = pymysql.connect(
         host=host,

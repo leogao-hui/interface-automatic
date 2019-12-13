@@ -8,7 +8,7 @@ from Common import HTMLTestRunner
 
 
 first = os.path.dirname((os.path.abspath(__file__)))
-case_path = os.path.join(first, "Cases/Login")
+case_path = os.path.join(first, "Cases/")
 report_path = os.path.join(first, "Common/Report")
 
 

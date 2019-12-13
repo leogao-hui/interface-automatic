@@ -55,10 +55,12 @@ def business_restart(data):
 
 def connect_socket(user_id):
     con_socket = create_connection('%s/im/%sms' % (socket_url, user_id))
-    while True:
+    return con_socket
+
+
+def receive_data(con_socket, num):
+    for i in range(num):
         rev_data = []
         data = con_socket.recv()
         rev_data.append(data)
-
-
-
+    return rev_data
