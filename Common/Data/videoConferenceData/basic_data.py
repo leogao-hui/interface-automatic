@@ -33,6 +33,7 @@ add_user_data_one = {
     "password": "admin123",
     "username": "admingao",
     "userrole": "参谋",
+    "realname": "测试人员一"
 }
 
 add_user_data_two = {
@@ -40,6 +41,7 @@ add_user_data_two = {
     "password": "admin123",
     "username": "admintest",
     "userrole": "参谋",
+    "realname": "测试人员二"
 }
 
 add_user_data_three = {
@@ -47,6 +49,7 @@ add_user_data_three = {
     "password": "admin123",
     "username": "admintest1",
     "userrole": "参谋",
+    "realname": "测试人员三"
 }
 
 add_user_data_four = {
@@ -54,6 +57,7 @@ add_user_data_four = {
     "password": "admin123",
     "username": "admintest2",
     "userrole": "参谋",
+    "realname": "测试人员四"
 }
 
 login_user_data_one = {

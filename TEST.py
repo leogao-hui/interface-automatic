@@ -3,6 +3,7 @@
 
 import requests
 import json
+import random
 
 administrator_login_data = {
   "createtime": "",
@@ -32,13 +33,13 @@ administrator_login_data = {
 }
 
 add_user_data_one = {
-    "password": "admin@123",
-    "username": "wt",
+    "password": "admin123",
+    "username": "admin",
 }
 
 url = 'http://10.66.9.15/sys/login'
 
-
-header = {"Content-Type": "application/json", "charset": "UTF-8"}
-response = requests.session().post(url=url, data=json.dumps(add_user_data_one), headers=header)
+header = {"Content-Type": "application/json", "charset": "UTF-8", "x-forward-for":
+        str(random.randint(1, 255)) + str(random.randint(1, 255)) + str(random.randint(1, 255)) + str(random.randint(1, 255))}
+response = requests.session().post(url=url, data=json.dumps(administrator_login_data), headers=header)
 print(response)

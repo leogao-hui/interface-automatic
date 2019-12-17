@@ -18,14 +18,14 @@ def add_video_conference_group(header_name, data):
     return response
 
 
-def add_video_conference_group_member(data):
+def add_video_conference_group_member(header_name, data):
     '''
     视频会议组 - 添加成员
     :param data: 视频会议组 - 添加成员数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header,url=VideoConferenceUrl.video_conference_group_add_member_url, data=data)
+    response = request.post(headers=header_name, url=VideoConferenceUrl.video_conference_group_add_member_url, data=data)
     return response
 
 
@@ -232,14 +232,15 @@ def video_meeting_enter(data):
     return response
 
 
-def receive_video_member_group_details(data):
+def receive_video_member_group_details(header_name, data):
     '''
     获取视频会议组详细信息
     :param data: 获取视频会议组详细信息数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=VideoConferenceUrl.receive_video_member_group_details_url, data=data)
+    response = request.post(headers=header_name, url=VideoConferenceUrl.receive_video_member_group_details_url,
+                            data=data)
     return response
 
 
@@ -265,25 +266,25 @@ def video_meeting_open_discussion(data):
     return response
 
 
-def video_meeting_end(data):
+def video_meeting_end(header_name, data):
     '''
     视频会议-结束
     :param data: 视频会议-结束数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=VideoConferenceUrl.video_meeting_end_url, data=data)
+    response = request.post(headers=header_name, url=VideoConferenceUrl.video_meeting_end_url, data=data)
     return response
 
 
-def video_meeting_end_discussion(data):
+def video_meeting_end_discussion(header_name, data):
     '''
     视频会议-结束讨论
     :param data: 视频会议-结束讨论数据
     :return: response
     '''
     request = requests.session()
-    response = request.post(headers=header, url=VideoConferenceUrl.video_meeting_end_discussion_url, data=data)
+    response = request.post(headers=header_name, url=VideoConferenceUrl.video_meeting_end_discussion_url, data=data)
     return response
 
 

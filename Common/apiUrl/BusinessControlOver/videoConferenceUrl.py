@@ -10,7 +10,7 @@ class VideoConferenceUrl:
     video_conference_group_add_url = '%s/sphy/group/add' % ci_url
 
     # 视频会议组-添加成员
-    video_conference_group_add_member_url = '%s/sphy/group/addmember'
+    video_conference_group_add_member_url = '%s/sphy/group/addmember' % ci_url
 
     # 视频会议-发言申请
     video_meeting_apply_to_speak_url = '%s/sphy/group/applyspeak' % ci_url

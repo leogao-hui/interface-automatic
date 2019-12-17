@@ -15,7 +15,7 @@ from Common.apiFunction.BusinessControlOver.videoConferenceFun import add_video_
 from Common.apiFunction.backgroundManagement.deviceManagementFun import add_device_information
 
 
-class TestVideoConference(unittest.TestCase):
+class TestOpenVideoConference(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
@@ -24,8 +24,7 @@ class TestVideoConference(unittest.TestCase):
         add_database_data_test_ci()  # 新增配置数据
         # 登录管理员账号
         response = login(get_header(''), json_dump(basic_data.administrator_login_data))
-        print(response)
-        exit_login(get_header(response.json()['d']['authorization']), '')
+        # exit_login(get_header(response.json()['d']['authorization']), '')
 
         # 新增人员
         add_user_information(get_header(response.json()['d']['authorization']),
@@ -55,8 +54,6 @@ class TestVideoConference(unittest.TestCase):
 
         }
         user_bind_device(get_header(response.json()['d']['authorization']), json_dump(user_bind_device_data))
-
-    def setUp(cls):
 
         # 视频会议人员连接socket
         cls.ws_one = connect_socket(cls.user_id_one)
@@ -116,11 +113,6 @@ class TestVideoConference(unittest.TestCase):
         cls.assertIn('开启了视频会议会议组', receive_data(cls.ws_two, 2)[0])
         cls.assertIn('开启了视频会议会议组', receive_data(cls.ws_three, 2)[0])
         log().info('socket信息发送成功')
-
-    def tearDown(cls):
-        cls.ws_one.close()
-        cls.ws_two.close()
-        cls.ws_three.close()
 
     @classmethod
     def tearDownClass(cls):

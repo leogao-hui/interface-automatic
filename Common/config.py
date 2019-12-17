@@ -18,7 +18,7 @@ header = {}
 
 
 def get_header(authorization):
-    header = {"Content-Type": "application/json", "charset": "UTF-8", "Authorization": authorization,
+    header = {"Content-Type": "application/json", "charset": "UTF-8", "Authorization": authorization, #"x-forward-for":str(random.randint(1, 255)) + str(random.randint(1, 255)) + str(random.randint(1, 255)) + str(random.randint(1, 255))
               }
     return header
 
