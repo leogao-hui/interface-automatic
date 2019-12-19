@@ -96,7 +96,6 @@ class TestAddMember(unittest.TestCase):
             'id': cls.meeting_conference_id
         }
         video_meeting_open_meeting(get_header(cls.auth), json_dump(open_meeting_data))
-        print(cls.meeting_conference_id)
 
     # 正常添加添加成员
     def test_normal_add_member_in_video_conference(cls):
@@ -132,7 +131,6 @@ class TestAddMember(unittest.TestCase):
         cls.assertEqual(True, response.json()['s'])
         cls.assertEqual('添加成员成功', response.json()['m'])
         data = receive_data(cls.ws_four, 2)
-        print(data)
 
     # 添加人员表没有中的人员
     # def test_no_person_in_member_list(cls):
